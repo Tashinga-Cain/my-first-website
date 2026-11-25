@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Isometra&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.container{
+    width:100%;
+    height:1200px;
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+  
+  
+    
+}
+.title{
+    text-align:center;
+    font-size: 50px;
+    font-family:montserrat;
+    margin-top: 50px;
+}
+.flipcard{
+    width:400px;
+    height:400px;
+    perspective: 1000px;
+    position: relative;
+   
+}
+.flipcard-inner{
+    width:100%;
+    height:100%;
+    transition: all 1s ease-in-out;
+    transform-style: preserve-3d;
+  
+}
+.flipcard-front{
+    width:100%;
+    height:100%;
+    background-color:green;
+    backface-visibility:hidden ; 
+    position: absolute;
+     border-radius: 30px;
+}
+.flipcard-back{
+    width:100%;
+    height:100%;
+    background-color:rgb(75, 75, 71);
+    backface-visibility:hidden ; 
+    position: absolute;
+    transform: rotateX(180deg); 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    gap:20px;
+     border-radius: 30px;
+}
+.flipcard:hover .flipcard-inner{
+    transform: rotateX(180deg);
+}
+.flipcard-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+ border-radius: 30px;
+}
+.flipcard-title{
+    font-size: 30px;
+    font-weight: bold;
+    font-family:montserrat;
+}
+.para{
+    width:80%;
+    color:white;
+    font-family:arial;
+}
+.btn{
+    width:200px;
+    height:50px;
+    font-family:montserrat;
+    font-size: 20px;
+    border:none;
+    cursor:pointer;
+    border-radius: 10px;
+    border:none;
+    font-weight: bold;
+
+}
+
+
+
+
+
+@media (max-width: 768px){
+    .container{
+        flex-direction:column;
+        height: auto;
+        gap:20px;
+        margin-top: 30px;
+    }
+    .flipcard{
+        width:300px;
+        height:300px;
+    }
+    .flipcard-title{
+        font-size: 20px;
+    }
+    .para{
+        width:90%;
+        font-size: 14px;
+    }
+    .btn{
+        width:150px;
+        height:40px;
+        font-size: 16px;
+    }
+}
